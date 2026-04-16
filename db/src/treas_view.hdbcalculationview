@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="treas_view" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="treas_view"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TEST_RULES">
+    <resourceUri>TEST_RULES</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="Rule_System_ID"/>
+      <viewAttribute id="FLAGS"/>
+      <viewAttribute id="Bookkeeping_Type"/>
+      <viewAttribute id="Entry_Type"/>
+      <viewAttribute id="PRIORITY"/>
+      <viewAttribute id="Event_Type"/>
+      <viewAttribute id="Cashflow_Type__Key_Figure"/>
+      <viewAttribute id="ACCOUNT"/>
+      <viewAttribute id="Account_Name"/>
+      <viewAttribute id="COUNTERPARTY_GROUP"/>
+      <viewAttribute id="FX_DEAL_CATEGORY"/>
+      <viewAttribute id="MM_DEAL_CATEGORY"/>
+      <viewAttribute id="TRANSACTION_CURRENCY"/>
+      <viewAttribute id="PORTFOLIO"/>
+      <viewAttribute id="INSTRUMENT"/>
+      <viewAttribute id="INSTRUMENT_GROUP"/>
+      <viewAttribute id="RULE"/>
+      <viewAttribute id="INSTRUMENT_GROUP_PATH"/>
+      <viewAttribute id="OWNER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TEST_RULES">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Rule_System_ID" source="Rule System ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Bookkeeping_Type" source="Bookkeeping Type"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Entry_Type" source="Entry Type"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Event_Type" source="Event Type"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Cashflow_Type__Key_Figure" source="Cashflow Type/ Key Figure"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Account_Name" source="Account Name"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="Bookkeeping_Type" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bookkeeping_Type"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Bookkeeping_Type"/>
+    </attribute>
+    <attribute id="Entry_Type" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Entry_Type"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Entry_Type"/>
+    </attribute>
+    <attribute id="Event_Type" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Event_Type"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Event_Type"/>
+    </attribute>
+    <attribute id="Cashflow_Type__Key_Figure" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cashflow_Type__Key_Figure"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Cashflow_Type__Key_Figure"/>
+    </attribute>
+    <attribute id="ACCOUNT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ACCOUNT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ACCOUNT"/>
+    </attribute>
+    <attribute id="Account_Name" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account_Name"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Account_Name"/>
+    </attribute>
+    <attribute id="COUNTERPARTY_GROUP" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTERPARTY_GROUP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="COUNTERPARTY_GROUP"/>
+    </attribute>
+    <attribute id="FX_DEAL_CATEGORY" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FX_DEAL_CATEGORY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FX_DEAL_CATEGORY"/>
+    </attribute>
+    <attribute id="MM_DEAL_CATEGORY" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MM_DEAL_CATEGORY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MM_DEAL_CATEGORY"/>
+    </attribute>
+    <attribute id="TRANSACTION_CURRENCY" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TRANSACTION_CURRENCY"/>
+      <keyMapping columnObjectName="Projection_1" columnName="TRANSACTION_CURRENCY"/>
+    </attribute>
+    <attribute id="PORTFOLIO" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PORTFOLIO"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PORTFOLIO"/>
+    </attribute>
+    <attribute id="INSTRUMENT" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INSTRUMENT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="INSTRUMENT"/>
+    </attribute>
+    <attribute id="INSTRUMENT_GROUP" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INSTRUMENT_GROUP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="INSTRUMENT_GROUP"/>
+    </attribute>
+    <attribute id="RULE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RULE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="RULE"/>
+    </attribute>
+    <attribute id="INSTRUMENT_GROUP_PATH" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INSTRUMENT_GROUP_PATH"/>
+      <keyMapping columnObjectName="Projection_1" columnName="INSTRUMENT_GROUP_PATH"/>
+    </attribute>
+    <attribute id="OWNER" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OWNER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OWNER"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="Rule_System_ID" order="1" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Rule_System_ID"/>
+      <measureMapping columnObjectName="Projection_1" columnName="Rule_System_ID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="FLAGS" order="2" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="FLAGS"/>
+      <measureMapping columnObjectName="Projection_1" columnName="FLAGS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="PRIORITY" order="5" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PRIORITY"/>
+      <measureMapping columnObjectName="Projection_1" columnName="PRIORITY"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="90" y="195"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
