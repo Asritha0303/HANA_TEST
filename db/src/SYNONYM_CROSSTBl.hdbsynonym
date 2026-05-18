@@ -1,0 +1,8 @@
+{
+  "Synonym_CROSS_TBL": {
+    "target": {
+      "object": "CROSS_CONTAINER_TBL",
+      "schema": "FC34E57CE8C043DEB7B2EF8BFE4CB756"
+    }
+  }
+}

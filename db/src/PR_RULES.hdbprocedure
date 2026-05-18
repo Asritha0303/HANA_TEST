@@ -1,0 +1,10 @@
+PROCEDURE "PR_RULES" ()
+LANGUAGE SQLSCRIPT
+SQL SECURITY INVOKER
+AS
+BEGIN
+    
+        lt_rules = SELECT "Rule System ID","PRIORITY" from test_accrules;
+
+               SELECT * FROM :lt_rules;
+END;

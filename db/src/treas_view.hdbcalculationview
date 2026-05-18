@@ -145,7 +145,6 @@
     <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="90" y="195"/>
       <rectangleSize height="30" width="160"/>
-    </shape>
-  </shapes>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>

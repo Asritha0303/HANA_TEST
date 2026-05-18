@@ -1,0 +1,8 @@
+{
+  "Synonym_department": {
+    "target": {
+      "object": "DEPARTMENT",
+      "schema": "C_FIN_A_1"
+    }
+  }
+}

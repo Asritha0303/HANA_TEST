@@ -1,0 +1,2 @@
+COLUMN TABLE test12 ("Rule System ID" INTEGER ,
+	 "PRIORITY" INTEGER )

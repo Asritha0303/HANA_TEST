@@ -1,0 +1,23 @@
+{
+	"ServiceName_2": {
+		"application_user": {
+			"schema_roles": [
+				{
+					"roles": [
+						"DEPTSELECT"
+					]
+				}
+			]
+		},
+		"object_owner": {
+			"schema_roles": [
+				{
+					"roles": [
+						"DEPTSELECT",
+						"DEPTSELECT_#"
+					]
+				}
+			]
+		}
+	}
+}
