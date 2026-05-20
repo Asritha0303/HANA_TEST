@@ -7,32 +7,75 @@
   <DataSource id="Synonym_department">
     <resourceUri>Synonym_department</resourceUri>
   </DataSource>
+  <DataSource id="TEST">
+    <resourceUri>TEST</resourceUri>
+  </DataSource>
 </dataSources>
 <snapshotProcedures/>
 <calculationViews>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+  <calculationView xsi:type="Calculation:ProjectionView" id="Synonym_tableDEPT">
     <viewAttributes>
       <viewAttribute id="DEPID"/>
       <viewAttribute id="DEPTNAME"/>
-    
       <viewAttribute id="EMPLOYEEID"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="Synonym_department"/>
   </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Employee_table">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="DESIGNATION"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TEST"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="DEPID" aggregationType="sum"/>
+      <viewAttribute id="DEPTNAME"/>
+      <viewAttribute id="EMPLOYEEID" aggregationType="sum"/>
+      <viewAttribute id="ID" aggregationType="sum"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute hidden="true" id="JOIN$EMPLOYEEID$ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Synonym_tableDEPT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPID" source="DEPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPTNAME" source="DEPTNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPLOYEEID" source="EMPLOYEEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EMPLOYEEID$ID" source="EMPLOYEEID"/>
+    </input>
+    <input node="Employee_table">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EMPLOYEEID$ID" source="ID"/>
+    </input>
+    <joinAttribute name="JOIN$EMPLOYEEID$ID"/>
+  </calculationView>
 </calculationViews>
-<logicalModel id="Projection_1">
+<logicalModel id="Join_1">
   <attributes>
     <attribute id="DEPTNAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DEPTNAME"/>
-      <keyMapping columnObjectName="Projection_1" columnName="DEPTNAME"/>
+      <keyMapping columnObjectName="Join_1" columnName="DEPTNAME"/>
+    </attribute>
+    <attribute id="NAME" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME"/>
+      <keyMapping columnObjectName="Join_1" columnName="NAME"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
     <measure id="DEPID" order="1" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="DEPID"/>
-      <measureMapping columnObjectName="Projection_1" columnName="DEPID"/>
+      <measureMapping columnObjectName="Join_1" columnName="DEPID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="EMPLOYEEID" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="EMPLOYEEID"/>
+      <measureMapping columnObjectName="Join_1" columnName="EMPLOYEEID"/>
       <exceptionAggregationMetadata/>
     </measure>
   </baseMeasures>
@@ -46,9 +89,26 @@
       <upperLeftCorner x="40" y="85"/>
     </shape>
   
-    <shape expanded="false" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="39" y="241"/>
+    <shape expanded="false" modelObjectName="Synonym_tableDEPT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="22" y="373"/>
       <rectangleSize height="30" width="160"/>
-    </shape></shapes>
+    </shape>
+    <shape expanded="true" modelObjectName="Employee_table" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="297" y="373"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="137" y="222"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Synonym_tableDEPT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="167"/>
+    </shape>
+    <shape modelObjectName="Employee_table" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="180"/>
+    </shape>
+  </shapes>
 </layout>
 </Calculation:scenario>
