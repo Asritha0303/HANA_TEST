@@ -27,6 +27,8 @@
       <viewAttribute id="ID"/>
       <viewAttribute id="NAME"/>
       <viewAttribute id="DESIGNATION"/>
+    
+      <viewAttribute id="EMAIL"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="TEST"/>
@@ -38,6 +40,7 @@
       <viewAttribute id="EMPLOYEEID" aggregationType="sum"/>
       <viewAttribute id="ID" aggregationType="sum"/>
       <viewAttribute id="NAME"/>
+      <viewAttribute id="EMAIL"/>
       <viewAttribute hidden="true" id="JOIN$EMPLOYEEID$ID"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -50,6 +53,7 @@
     <input node="Employee_table">
       <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMAIL" source="EMAIL"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EMPLOYEEID$ID" source="ID"/>
     </input>
     <joinAttribute name="JOIN$EMPLOYEEID$ID"/>
@@ -64,6 +68,11 @@
     <attribute id="NAME" order="4" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="NAME"/>
       <keyMapping columnObjectName="Join_1" columnName="NAME"/>
+    </attribute>
+  
+    <attribute id="EMAIL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMAIL"/>
+      <keyMapping columnObjectName="Join_1" columnName="EMAIL"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
@@ -86,19 +95,21 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="40" y="85"/>
+      <upperLeftCorner x="221.11302679000914" y="112"/>
+    
+      <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="false" modelObjectName="Synonym_tableDEPT" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="22" y="373"/>
+      <upperLeftCorner x="92.00000000000001" y="376.9999988079071"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="Employee_table" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="297" y="373"/>
+      <upperLeftCorner x="302.00000000000006" y="376.9999988079071"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="137" y="222"/>
+      <upperLeftCorner x="221.11302679000914" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="Synonym_tableDEPT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
